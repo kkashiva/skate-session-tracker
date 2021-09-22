@@ -10,8 +10,8 @@ class Session {
       required this.location,
       required this.start,
       required this.end});
-  Duration sessionDuration() {
+  int sessionDuration() {
     var sessionDuration = end.difference(start);
-    return sessionDuration;
+    return sessionDuration.inMinutes;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import './session.dart';
 
 main() {
@@ -53,7 +54,27 @@ class MyHomePage extends StatelessWidget {
             ),
             Column(
               children: sessions.map((s) {
-                return Card(child: Text(s.location));
+                return Card(
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          child: Text(s.sessionDuration().toString()),
+                          decoration: BoxDecoration(),
+                        ),
+                        Column(
+                          children: [
+                            Text(s.location),
+                            Text(DateFormat.E().format(s.start)),
+                          ],
+                        ),
+                      ],
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    ),
+                    width: double.infinity,
+                  ),
+                );
               }).toList(),
             )
           ],
