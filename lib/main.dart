@@ -61,9 +61,9 @@ class MyHomePage extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           child: Text(
-                            s.sessionDuration().toString(),
+                            '${s.sessionDuration()}min',
                             style: TextStyle(
-                                color: Color(0xffffffff), fontSize: 22),
+                                color: Color(0xffffffff), fontSize: 16),
                           ),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
                                     ? Colors.green.shade500
                                     : Color(0xff23a455),
                           ),
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(20),
                           margin:
                               EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                         ),
@@ -99,7 +99,6 @@ class MyHomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     ),
                     width: double.infinity,
-                    height: 60,
                   ),
                 );
               }).toList(),
